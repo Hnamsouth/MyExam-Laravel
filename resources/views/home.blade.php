@@ -13,14 +13,21 @@
 
         <div class="table-responsive">
             <div class="w-25 text-right">
-                <form action="{{ route('book')}}" method="post">
+
+                <form action="{{ route('book')}}" method="post" class="d-flex justify-content-center ">
                     @csrf
                     <div class="form-floating mb-3">
                         <input type="text" name="search" class="form-control" id="search" placeholder="...">
                         <label for="search">Search</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <div>
+                        <button type="submit" class="btn btn-primary ms-2">Search</button>
+
+                    </div>
                 </form>
+                @if(session('err_search'))
+                    <p class="alert alert-danger">{{ session('err_search') }}</p>
+                @endif
             </div>
 
             <table class="table customize-table v-middle">
