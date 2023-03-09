@@ -24,9 +24,10 @@
                         <button type="submit" class="btn btn-primary ms-2">Search</button>
 
                     </div>
+
                 </form>
                 @if(session('err_search'))
-                    <p class="alert alert-danger">{{ session('err_search') }}</p>
+                    <p class="text-danger">{{ session('err_search') }}</p>
                 @endif
             </div>
 
